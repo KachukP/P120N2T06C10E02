@@ -52,7 +52,7 @@ function Principal(){
     NuevoLI.textContent=i.Tema;
     const ClaseAsignada= i.Class||"sin-clase";
     NuevoLI.classList.add(ClaseAsignada);
-    console.log(NuevoLI);
+    //console.log(NuevoLI);
     ListaElement.appendChild(NuevoLI);
   };
 };
