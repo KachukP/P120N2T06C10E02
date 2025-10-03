@@ -1,30 +1,59 @@
-const cosasQueAprendimos = [
+const CosasQueAprendimos=[
   {
-    tema: "terminal",
-    class: "",
+    Tema: "Terminal",
+    Class: "",
   },
   {
-    tema: "node",
-    class: "",
+    Tema: "Node",
+    Class: "",
   },
   {
-    tema: "oop",
-    class: "",
+    Tema: "POO",
+    Class: "",
   },
   {
-    tema: "typescript",
-    class: "",
+    Tema: "TypeScript",
+    Class: "",
   },
   {
-    tema: "css",
-    class: "",
+    Tema: "CSS",
+    Class: "",
   },
   {
-    tema: "dom",
-    class: "special",
+    Tema: "DOM",
+    Class: "Especial",
   },
 ];
 
-function main() {}
-
-main();
+function Principal(){
+  //Version Extensa:
+  /*
+  const ListaElement=document.querySelector(".lista");
+  console.log(ListaElement);
+  const ListaLI=ListaElement.querySelectorAll("li");
+  console.log(ListaLI);
+  const ItemsElement=document.querySelectorAll(".lista li");
+  console.lob(ItemsElement);
+  //Para ver el tiempo que tarda en ejecutarse:
+  setTimeout(()=>{
+    for (let e of ItemsElement){
+      e.remove();
+    }
+  },6000)
+  */
+  //Version Simple:
+  const ListaElement=document.querySelector(".lista");
+  const ItemsElement=document.querySelectorAll(".lista li");
+  for (let e of ItemsElement){
+    e.remove();
+  };
+  for (const i of CosasQueAprendimos) {
+    const NuevoLI=document.createElement("li");
+    NuevoLI.textContent=i.Tema;
+    const ClaseAsignada= i.Class||"sin-clase";
+    NuevoLI.classList.add(ClaseAsignada);
+    console.log(NuevoLI);
+    ListaElement.appendChild(NuevoLI);
+  };
+};
+Principal();
